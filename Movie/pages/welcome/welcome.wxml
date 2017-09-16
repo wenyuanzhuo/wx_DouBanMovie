@@ -1,0 +1,103 @@
+<view class="container">
+  <view class="swiper-container">
+ <swiper autoplay="false" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+   <block wx:for="{{slider}}" wx:key="unique">
+     <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}">
+       <image src="{{item.picUrl}}" class="img"></image>
+     </swiper-item>
+   </block>
+ </swiper>
+ <view class="dots">
+    <block wx:for="{{slider}}" wx:key="unique">
+      <view class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}">{{index+1}}</view>
+    </block>
+  </view>
+</view>
+
+    <view class="session-search session-search-spacing">
+
+        <!-- <text class="search-placholder">搜索电影</text> -->
+        <navigator url="../search/search" hover-class="search-placholder">搜索电影</navigator>
+        <icon class="session-search-icon" type="search"  size="16"/>
+
+    </view>
+    <view class="page-session page-session-spacing">
+        <view class="session-header">
+        <view  class="session-header-title">影院热映</view>
+        <navigator url="/pages/searchResult/searchResult">
+        <text class="session-header-more" data-type-id="intheaters">更多</text>
+        </navigator>
+        </view>
+    </view>
+    <view class="session-content session-content-spacing">
+     <!--<scroll-view class="movie-scoll"
+       scroll-x="true">-->
+       <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
+         <!--<block wx:for="item" wx:for="{{inTheaters}}">
+           <template data="{{...item}}" is="movie-grid-template"/>
+         </block>-->
+          <!-- <navigator url="/pages/searchResult/searchResult?id={{item.id}}"> -->
+         <block wx:for="{{inTheaters}}" wx:key="">
+             <view class="scroll-view-item" >
+             <!-- <view class="film-item" bindtap="viewDetail" data-id="{{item.id}}" > -->
+                 <navigator url="/pages/logs/logs?id={{item.id}}"> 
+               <image class="movie-img" src="{{item.images.large}}"/>
+               </navigator>
+               <view class="movie-name"><text>{{item.title}}</text></view>
+               <view class="movie-grade">
+                  <canvas id="demo" width="55"height="11" >123456789</canvas>
+                  <text id="movie-grade-value">{{item.rating.average}}</text></view>
+            <!-- </view> -->
+             </view>
+
+         </block>
+
+       </scroll-view>
+
+    </view>
+      <view class="page-session page-session-spacing">
+        <view class="session-header">
+        <view  class="session-header-title">即将上映</view>
+         <navigator url="/pages/searchResult/searchResult">
+        <text class="session-header-more" data-type-id="comingSoon">更多</text>
+         </navigator>
+        </view>
+          <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
+
+         <block wx:for="{{comingSoon}}" wx:key="">
+          <view class="scroll-view-item" >
+
+            <image class="movie-img" src="{{item.images.large}}"/>
+
+         <view class="movie-name"><text>{{item.title}}</text></view>
+         <view class="movie-grade">
+                <canvas id="demo" width="55"height="11" >123456789</canvas>
+                <text id="movie-grade-value">{{item.rating.average}}</text></view>
+         </view>
+         </block>
+
+           </scroll-view>
+    </view>
+     <view class="page-session page-session-spacing">
+        <view class="session-header">
+        <view  class="session-header-title">口碑榜</view>
+
+        <text class="session-header-more" data-type-id="">更多</text>
+        </view>
+    </view>
+        <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
+
+         <block wx:for="{{weekly}}" wx:key="">
+          <view class="scroll-view-item" >
+
+            <image class="movie-img" src="{{item.images.large}}"/>
+
+         <view class="movie-name"><text>{{item.title}}</text></view>
+         <view class="movie-grade">
+                <canvas id="demo" width="55"height="11" >123456789</canvas>
+                <text id="movie-grade-value">{{item.rating.average}}</text></view>
+         </view>
+         </block>
+
+       </scroll-view>
+</view>

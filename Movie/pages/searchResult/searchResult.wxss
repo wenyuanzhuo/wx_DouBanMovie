@@ -1,0 +1,6 @@
+/* pages/searchResult/searchResult.wxss */
+.movie-img{
+    width: 300rpx;
+    height: 380rpx;
+    margin: auto;
+}

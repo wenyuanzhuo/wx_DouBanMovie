@@ -1,0 +1,13 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+
+    <view class="searchResult-movie-img">
+        <image class="searchResult-movie-images" mode="scaleToFill" src="{{searchs.images.large}}" />
+    </view>
+    <view class="searchResult-movie-title">
+       <text class="searchResult-movie-title-name">{{searchs.title}}</text>
+    </view>
+
+
+
+</view>

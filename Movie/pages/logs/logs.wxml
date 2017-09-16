@@ -1,0 +1,21 @@
+
+<view class="container">
+  
+    <view class="subject-movie-img">
+        <image class="subject-movie-images" mode="scaleToFill" src="{{subject.images.large}}" />
+    </view>
+    <view class="subject-movie-title">
+       <text class="detail-movie-title-name">{{subject.title}}</text>
+    </view>
+    <view class="subject-movie-director">
+       <text>导演：</text><text class="subject-movie-director-name" wx:for="{{directors}}" wx:key="">{{item.name}}</text>
+    </view>
+    <view class="subject-movie-star">
+       <text>演员：</text><text class="detail-movie-star-name" wx:for="{{casts}}" wx:key="">{{item.name}}</text>
+    </view>
+    <view class="subject-movie-content">
+       <text class="subject-movie-content-summary">{{subject.summary}}</text>
+    </view>
+
+ 
+</view>

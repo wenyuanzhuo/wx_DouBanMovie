@@ -1,0 +1,57 @@
+<!--pages/search/search.wxml-->
+<!--pages/movie/search/search.wxml-->
+<view class="container">
+  <view class="session-search session-search-spacing">
+    <icon class="search-icon" type="search" size="16"></icon>
+    <input class="search-content" placeholder-class="search-placeholder" bindinput="bindSearchInput" placeholder="搜索电影" value="{{keyword}}" />
+    <block wx:if="{{showDelete}}">
+      <text class="search-cancel" bindtap="bindSearchDelete">取消</text>
+    </block>
+    <!-- <text class="search-cancel" bindtap="bindSearchCancel">取消</text> -->
+  </view>
+  <view class="session-movie">
+    <block wx:for="{{result.subjects}}" wx:for-item="item" wx:key="">
+      <view class="movie-wrapper" data-id="{{item.id}}" bindtap="handletap">
+        <view class="movie-content">
+          <image class="poster" src="{{item.images.small}}"></image>
+          <view class="summary">
+            <text class="name">{{item.title}}</text>
+            <text class="desc">{{item.summary}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- <view class="search-hd">
+    <view class="search-area">
+        <form bindsubmit="search">
+            <view class="search-type" bindtap="changeSearchType">{{searchType == 0 ? '默认' : '类型'}}</view>
+            <input class="search-txt" name="keyword" auto-focus placeholder="{{searchType == 0 ? '请输入电影标题、演员或导演' : '请输入影片类型，如：爱情、喜剧'}}"/>
+
+            <button class="search-btn" formType="submit">搜索</button>
+
+        </form>
+    </view>
+    <view class="movieList" style="display='{{activeIndex}}'">
+     <block wx:for="{{movieList}}" wx:key="">
+      <navigator url="/pages/logs/logs?id={{item.id}}">
+          <view class="movie-name">{{item.title}} {{item.rating.average}}</view>
+      </navigator>
+      </block>
+    </view> -->
+
+    <!-- <view class="search-keyword">
+        <view class="search-keyword-title">热门搜索</view>
+        <view wx:for="{{hotKeyword}}" wx:for-item="hotKeywordItem" wx:key="hotKeywordItem" class="search-keyword-item" data-keyword="{{hotKeywordItem}}" bindtap="searchByKeyword">{{hotKeywordItem}}</view>
+        <view class="search-keyword-title">热门标签</view>
+        <view wx:for="{{hotTag}}" wx:for-item="hotTagItem" wx:key="hotTagItem" class="search-keyword-item" data-keyword="{{hotTagItem}}" bindtap="searchByTag">{{hotTagItem}}</view>
+    </view> -->
+
+    <!-- <view class="searchResult">
+
+         <image class="subject-movie-images" mode="scaleToFill" src="{{searchs.images.large}}" />
+            <text class="detail-movie-title-name" wx:for="{{movielist}}" wx:key="{{}}">{{searchs.title}}</text>
+    </view> -->
+
+<!-- </view> -->

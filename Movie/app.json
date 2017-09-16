@@ -1,0 +1,27 @@
+{
+  "pages": [
+   
+    "pages/welcome/welcome",
+    
+    "pages/search/search",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/searchResult/searchResult",
+    "pages/coming/coming",
+   
+    "pages/login/login"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#47a86c",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText":  "豆瓣电影",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "dark"
+  },
+ 
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

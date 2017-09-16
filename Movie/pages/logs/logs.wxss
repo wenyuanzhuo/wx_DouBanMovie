@@ -1,0 +1,14 @@
+/* pages/logs/logs.wxss */
+.container {
+  margin: 16rpx;
+  font-family: "微软雅黑";
+}
+.subject-movie-images {
+  width: 414rpx;
+}
+.detail-movie-star-name:after {
+  content: '/';
+}
+.subject-movie-content-summary {
+  text-indent: 2em;
+}

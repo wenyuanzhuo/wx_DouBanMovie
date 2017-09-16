@@ -1,0 +1,19 @@
+
+<scroll-view scroll-y="true" style=" white-space: nowrap; display: flex" >
+
+
+  <block wx:for="{{inTheaters}}" wx:key="">
+      <view class="scroll-view-item" >
+
+           <navigator url="/pages/logs/logs?id={{item.id}}">
+        <image class="movie-img" src="{{item.images.large}}"/>
+        <view class="movie-name"><text>{{item.title}}</text></view>
+        <view class="movie-grade">
+           <canvas id="demo" width="55"height="11" >123456789</canvas>
+           <text id="movie-grade-value">{{item.rating.average}}</text></view>
+           </navigator>
+      </view>
+
+  </block>
+
+</scroll-view>
